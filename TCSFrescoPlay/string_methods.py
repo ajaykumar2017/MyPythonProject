@@ -48,8 +48,13 @@ def stringMethod(para, special1, special2, list1, strfind):
     for str1 in word_list:
         if word_list.count(str1) <= 3:
             temp_list.append(str1)
-
-    print(temp_list[:20])
+    new_list = sorted(temp_list, key=temp_list.count, reverse=True)
+    unique_list = []
+    for x in new_list:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    print(unique_list[-20:])
 
     # Section 6
     print(word1.rindex(strfind))
