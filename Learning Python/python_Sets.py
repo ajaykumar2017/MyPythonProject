@@ -51,9 +51,9 @@ print(thisset8)
 
 # Note: Sets are unordered, so when using the pop() method, you will not know which item that gets removed.
 thisset9 = {"apple", "banana", "cherry"}
-x = thisset.pop()
+x = thisset9.pop()
 print(x)
-print(thisset)
+print(thisset9)
 
 # The clear() method empties the set:
 thisset10 = {"apple", "banana", "cherry"}
