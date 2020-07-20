@@ -14,7 +14,7 @@ class rectangle:
 
     def area(self, length, breadth):
         area = length * breadth
-        print("Area of Rectangle is " + str(area))
+        print("Area of Rectangle is  " + str(area))
 
 
 class square:
@@ -23,7 +23,7 @@ class square:
 
     def area(self, side):
         area = side * side
-        print("Area of Square is " + str(area))
+        print("Area of square is  " + str(area))
 
 
 if __name__ == '__main__':
