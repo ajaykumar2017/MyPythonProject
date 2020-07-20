@@ -17,9 +17,9 @@ def Handle_Exc1():
         a = int(input())
         b = int(input())
         if a > 150 or b < 100:
-            print("Input integers value out of range.")
+            raise ValueError("Input integers value out of range.")
         elif a + b > 400:
-            print("Their sum is out of range")
+            raise ValueError("Their sum is out of range")
         else:
             print("All in range")
     except ValueError as e:

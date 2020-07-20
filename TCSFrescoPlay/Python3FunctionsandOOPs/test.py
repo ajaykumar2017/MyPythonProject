@@ -89,3 +89,5 @@ class class1:
 
 class1().f1()
 class1().f1()
+
+print(round(2067.7, 1))
