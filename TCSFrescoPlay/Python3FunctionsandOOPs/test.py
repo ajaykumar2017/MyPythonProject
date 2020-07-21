@@ -91,3 +91,23 @@ class1().f1()
 class1().f1()
 
 print(round(2067.7, 1))
+
+import itertools
+import operator
+
+# String for sequence generation
+tuplevalues = ((1, 10, 5, 2), (8, 48, 14, 63))
+
+# Calling the function Cycle from
+# itertools and passing string as
+# an argument and the function returns
+# the iterator object
+StringBuffer = itertools.cycle(tuplevalues[1])
+list1 = []
+print(type(tuplevalues[1][0]))
+print(type(len(tuplevalues[1])))
+print("Printing the number repeadtly:")
+print(tuple(list(itertools.repeat(tuplevalues[1][0], len(tuplevalues[1])))))
+print(tuple(list(itertools.accumulate(tuplevalues[1], operator.mul))))
+print(tuple(list(itertools.chain(tuplevalues[0], tuplevalues[1]))))
+print(tuple(list(itertools.filterfalse(lambda x: x % 2 != 0, list(itertools.chain(tuplevalues[0], tuplevalues[1]))))))
