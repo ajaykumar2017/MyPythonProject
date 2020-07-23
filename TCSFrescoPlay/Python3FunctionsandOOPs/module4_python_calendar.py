@@ -9,7 +9,7 @@ import calendar
 import datetime
 from collections import Counter
 #
-# Complete the 'calen' function below.
+# Complete the 'usingcalendar' function below.
 #
 # The function accepts TUPLE datetuple as parameter.
 #
