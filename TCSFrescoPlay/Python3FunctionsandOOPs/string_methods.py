@@ -7,7 +7,12 @@ import re
 import sys
 
 
-def stringMethod(para, special1, special2, list1, strfind):
+def Reverse(lst):
+    lst.reverse()
+    return lst
+
+
+def stringmethod(para, special1, special2, list1, strfind):
     # Section 1 --> Ok
     word1 = ""
     for character in para:
@@ -30,11 +35,11 @@ def stringMethod(para, special1, special2, list1, strfind):
         if s not in para:
             a = False
     if a:
-        print("Every string in", end=" "),
+        print("Every string in ", end=" "),
         print(list1, end=" "),
         print("were present")
     else:
-        print("Every string in", end=" "),
+        print("Every string in ", end=" "),
         print(list1, end=" "),
         print("were not present")
 
@@ -44,21 +49,20 @@ def stringMethod(para, special1, special2, list1, strfind):
     # Section 5
     word_list = word1.split()
 
-    temp_list = []
+    temp_dict = dict()
     for str1 in word_list:
         if word_list.count(str1) <= 3:
-            temp_list.append(str1)
-    new_list = sorted(temp_list, key=temp_list.count, reverse=True)
-    unique_list = []
-    for x in new_list:
-        # check if exists in unique_list or not
-        if x not in unique_list:
-            unique_list.append(x)
-    print(unique_list[-20:])
+            if str1 not in temp_dict:
+                temp_dict[str1] = 0
+            temp_dict[str1] += 1
+    temp_list = []
+    for value in list(reversed(list(temp_dict)))[0:20]:
+        temp_list.append(value)
+    print(Reverse(temp_list))
 
-    # Section 6
+
+# Section 6
     print(word1.rindex(strfind))
-
 
 if __name__ == '__main__':
     para = input()  # a string
@@ -70,4 +74,4 @@ if __name__ == '__main__':
         qw1_item = input()
         qw1.append(qw1_item)
     strf = input()
-    stringMethod(para, spch1, spch2, qw1, strf)
+    stringmethod(para, spch1, spch2, qw1, strf)
