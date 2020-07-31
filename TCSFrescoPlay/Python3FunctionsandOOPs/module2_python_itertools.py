@@ -18,26 +18,30 @@ import operator
 
 
 def performIterator(tuplevalues):
-    main_list = []
-    list1 = []
-    temp = 0
-    for item in itertools.cycle(tuplevalues[0]):
-        if temp >= len(tuplevalues[0]):
-            break
-        else:
-            list1.append(item)
-            temp += 1
-    main_list.append(tuple(list1))
+    l = []
+    l1 = []
+    n = 0
+    for i in tuplevalues[0]:
+        if n < 4:
+            l1.append(i)
+            n = n + 1
+    l.append(tuple(l1))
 
-    main_list.append(tuple(list(itertools.repeat(tuplevalues[1][0], len(tuplevalues[1])))))
+    l2 = tuplevalues[1]
+    x = l2[0]
+    l2 = tuple(itertools.repeat(int(x), len(l2)))
+    l.append(l2)
 
-    main_list.append(tuple(list(itertools.accumulate(tuplevalues[2], operator.add))))
+    l3 = tuple(itertools.accumulate(tuplevalues[2], operator.add))
+    l.append(l3)
 
-    main_list.append(tuple(list(itertools.chain(tuplevalues[0], tuplevalues[1], tuplevalues[2], tuplevalues[3]))))
+    l4 = tuple(itertools.chain(*tuplevalues))
+    l.append(l4)
 
-    main_list.append(tuple(list(itertools.filterfalse(lambda x: x % 2 == 0, list(itertools.chain(tuplevalues[0], tuplevalues[1], tuplevalues[2], tuplevalues[3]))))))
+    l4 = tuple(itertools.filterfalse(lambda x: x % 2 == 0, l4))
+    l.append(l4)
 
-    return tuple(main_list)
+    return tuple(l)
 
 
 if __name__ == '__main__':

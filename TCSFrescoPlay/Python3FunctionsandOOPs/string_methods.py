@@ -60,9 +60,9 @@ def stringmethod(para, special1, special2, list1, strfind):
         temp_list.append(value)
     print(Reverse(temp_list))
 
-
-# Section 6
+    # Section 6
     print(word1.rindex(strfind))
+
 
 if __name__ == '__main__':
     para = input()  # a string
