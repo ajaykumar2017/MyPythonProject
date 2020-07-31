@@ -20,7 +20,7 @@ def Library(memberfee, installment, book):
         elif installment == 0:
             raise ZeroDivisionError("Number of Installments cannot be Zero.")
         else:
-            print("Amount per Installment is  " + str(round((memberfee / installment), 0)))
+            print("Amount per Installment is  " + str(float(memberfee / installment)))
 
         if book.lower() in (string.lower() for string in listOfBooks):
             print("It is available in this section")
